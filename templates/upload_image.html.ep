@@ -1,0 +1,36 @@
+% layout 'default';
+<br />
+<br />
+
+<div class="col-md-6 mx-auto">
+    <form method="post" action="/upload-image" enctype="multipart/form-data">
+        <div class="input-group">
+            <div class="custom-file">
+                <input type="file"
+                       class="custom-file-input"
+                       name="upload_image"
+                       id="upload_image"
+                       type='file'
+                       required
+                />
+                <label class="custom-file-label" for="upload_image">Select Image</label>
+            </div>
+          <div class="input-group-append">
+                <input class="btn btn-primary" type="submit" value="Upload" />
+          </div>
+        </div>
+    </form>
+</div>
+
+<br>
+% if ($error) {
+    <div class="alert alert-danger">
+        <p> <%= $error %> </p>
+    </div>
+% }
+
+% if ( $message ) {
+    <div class="alert alert-success col-md-6 mx-auto">
+        <p> <%= $message %> </p>
+    </div>
+% }
